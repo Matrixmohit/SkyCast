@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyCast</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="weather logo" class="logo" />
+
+        <div class="brand-text">
+          <h2>SkyCast</h2>
+          <p>Weather for better tomorrow</p>
+        </div>
+      </div>
+      <!--Nav part-->
+      <nav>
+        <ul class="nav-links">
+          <li id="nav-home" class="active">
+            <i class="fa-solid fa-house"></i>
+            <a href="#">Home</a>
+          </li>
+          <li id="nav-about">
+            <i class="fa-solid fa-circle-info"></i>
+            <a href="#">About</a>
+          </li>
+        </ul>
+        <button class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- LEFT: Hero Content -->
+      <div class="hero-content">
+        <h1>
+          Know the Weather,
+          <br />
+          Plan
+          <span>Better.</span>
+        </h1>
+
+        <p>
+          Get real-time weather updates
+          <br />
+          for any city in the world.
+        </p>
+
+        <p id="hero-footer">
+          “Good weather<br />
+          brings good mood.”
+        </p>
+      </div>
+
+      <!-- MIDDLE: Main Weather Dashboard -->
+      <div class="weather-dashboard">
+        <!-- Search -->
+        <div class="search-cities">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            placeholder="Search city (e.g. Delhi, London, Tokyo...)"
+            id="cities-input"
+          />
+
+          <button id="search-btn">Search</button>
+        </div>
+
+        <div id="loading-screen">
+          <div class="loader"></div>
+          <p>Updating the skies...</p>
+        </div>
+
+        <div class="weather-data-area">
+          <!-- Current Weather -->
+          <div class="current-weather-card">
+            <div class="current-place-weather">
+              <i class="fa-solid fa-location-arrow"></i>
+              <h2>Delhi, India</h2>
+            </div>
+
+            <p id="current-date">Wed, 9 Sep 2026 11:15 PM</p>
+            <img
+              src="Weather-image/clear.png"
+              alt="weather"
+              id="weather-icon"
+            />
+            <div class="temperature">
+              <h1>30°C</h1>
+              <p>Clear</p>
+              <p>Feels like <span>36°C</span></p>
+            </div>
+
+            <div class="weather-stats">
+              <div class="weather-stat">
+                <i class="fa-solid fa-droplet"></i>
+                <p>Humidity <span>65%</span></p>
+              </div>
+
+              <div class="weather-stat">
+                <i class="fa-solid fa-wind"></i>
+                <p>Wind <span>12km/h</span></p>
+              </div>
+
+              <div class="weather-stat">
+                <i class="fa-regular fa-clock"></i>
+                <p>Pressure <span>1012 hPa</span></p>
+              </div>
+
+              <div class="weather-stat">
+                <i class="fa-regular fa-eye"></i>
+                <p>Visibility <span>10km</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hourly Forecast -->
+          <div class="hourly-forecast">
+            <div class="hourly-head">
+              <div class="hourly-title">
+                <i class="fa-regular fa-clock"></i>
+                <p>Hourly Forecast</p>
+              </div>
+
+              <a href="#" id="hourly-see-more">
+                See more
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="hourly-cards">
+              <div class="hourly-card">
+                <p>7 PM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+
+              <div class="hourly-card">
+                <p>8 PM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+
+              <div class="hourly-card">
+                <p>9 PM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+
+              <div class="hourly-card">
+                <p>10 PM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+
+              <div class="hourly-card">
+                <p>11 PM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+
+              <div class="hourly-card">
+                <p>12 AM</p>
+                <img src="Weather-image/partly.png" alt="weather-icon" />
+                <p>32°C</p>
+              </div>
+            </div>
+            <div class="hourly-details" id="hourly-details">
+              <div class="hourly-details-head">
+                <p>Next 24 Hours</p>
+                <button id="hourly-back">Back</button>
+              </div>
+
+              <div class="hourly-details-cards" id="hourly-details-cards"></div>
+            </div>
+          </div>
+
+          <!-- 5-Day Forecast -->
+          <div class="five-day-forecast">
+            <div class="days-forecast-head">
+              <div class="days-title">
+                <i class="fa-regular fa-calendar"></i>
+                <p>5-Day Forecast</p>
+              </div>
+
+              <a href="#" id="days-see-more">
+                See more
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="upcoming-cards">
+              <div class="upcoming-card">
+                <p>Sat<br />12 Sep</p>
+                <img src="Weather-image/clear.png" alt="upcoming-weather" />
+                <p>33°C/34°C</p>
+              </div>
+
+              <div class="upcoming-card">
+                <p>Sun<br />13 Sep</p>
+                <img src="Weather-image/rainy.png" alt="upcoming-weather" />
+                <p>36°C/37°C</p>
+              </div>
+
+              <div class="upcoming-card">
+                <p>Mon<br />14 Sep</p>
+                <img src="Weather-image/rainy.png" alt="upcoming-weather" />
+                <p>36°C/37°C</p>
+              </div>
+
+              <div class="upcoming-card">
+                <p>Tue<br />15 Sep</p>
+                <img src="Weather-image/rainy.png" alt="upcoming-weather" />
+                <p>36°C/37°C</p>
+              </div>
+
+              <div class="upcoming-card">
+                <p>Wed<br />16 Sep</p>
+                <img src="Weather-image/rainy.png" alt="upcoming-weather" />
+                <p>36°C/37°C</p>
+              </div>
+            </div>
+
+            <div class="days-details" id="days-details">
+              <div class="days-details-head">
+                <p>7-Day Forecast</p>
+                <button id="days-back">Back</button>
+              </div>
+
+              <div class="days-details-cards" id="days-details-cards"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <aside class="sidebar">
+        <div class="location">
+          <div class="map-container">
+            <div id="world-map"></div>
+            <i class="fa-solid fa-location-dot" id="map-marker"></i>
+          </div>
+
+          <p id="map-city">Getting your location...</p>
+          <p id="coordinates">28.4595° N, 77.0266° E</p>
+        </div>
+
+        <div class="morn-night">
+          <div class="sunrise">
+            <img src="sunrise.png" alt="sunrise" />
+
+            <div class="sun-time">
+              <p>Sunrise</p>
+              <p>6:43 AM</p>
+            </div>
+          </div>
+
+          <div class="sunset">
+            <img src="sunset.png" alt="sunset" />
+
+            <div class="sun-time">
+              <p>Sunset</p>
+              <p>6:50 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="air">
+          <div class="air-title">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Air Quality Index</p>
+          </div>
+
+          <div class="air-value">
+            <h2>72</h2>
+            <span>Good</span>
+          </div>
+
+          <p class="air-description">Air quality is satisfactory.</p>
+        </div>
+
+        <div class="quick-cities">
+          <div class="quick-cities-title">
+            <i class="fa-solid fa-location-dot"></i>
+            <h5>Quick Cities</h5>
+          </div>
+          <div class="cities">
+            <button class="city">Delhi</button>
+            <button class="city">Mumbai</button>
+            <button class="city">London</button>
+            <button class="city">Tokyo</button>
+            <button class="city">New York</button>
+            <button class="city">Bengaluru</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about-page">
+      <div class="about-page-container">
+
+        <div class="about-container">
+          <div class="about">
+            <h1>About <span>SkyCast</span></h1>
+            <h2>More than just weather - a clearer tomorrow.</h2>
+            <p>
+              SkyCast is a modern weather forecasting web application that
+              provides real-time weather updates,accurate forecasts,and
+              essential environmental information for cities around the
+              world.Our goal is to help you stay informed, plan better,and make
+              the most of your day - no matter where you are.
+            </p>
+          </div>
+
+          <div class="features">
+            <div class="real-time-updates">
+              <i class="fa-solid fa-bolt"></i>
+              <h3>Real-Time Updates</h3>
+              <p>Get the latest weather information for any city instantly.</p>
+            </div>
+
+            <div class="detailed-forecasts">
+              <i class="fa-jelly-fill fa-regular fa-calendar"></i>
+              <h3>Detailed Forecasts</h3>
+              <p>
+                View hourly and 5-day forecasts to plan ahead with confidence.
+              </p>
+            </div>
+
+            <div class="global-coverage">
+              <i class="fa-solid fa-globe"></i>
+              <h3>Global Coverage</h3>
+              <p>Check weather conditions for cities across the world.</p>
+            </div>
+
+            <div class="air-quality-insights">
+              <i class="fa-solid fa-leaf"></i>
+              <h3>Air Quality Insights</h3>
+              <p>Stay Informed with real-time air quality index (AQI) data.</p>
+            </div>
+
+            <div class="sunrise-sunset">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-sunset"
+              >
+                <path d="M12 10V2" />
+                <path d="m4.93 10.93 1.41 1.41" />
+                <path d="M2 18h2" />
+                <path d="M20 18h2" />
+                <path d="m19.07 10.93-1.41 1.41" />
+                <path d="M22 22H2" />
+                <path d="m16 6-4 4-4-4" />
+                <path d="M16 18a4 4 0 0 0-8 0" />
+              </svg>
+              <h3>Sunrise & Sunset</h3>
+              <p>Know the exact sunrise and sunset times for any location.</p>
+            </div>
+
+            <div class="clean-and-simple">
+              <i class="fa-solid fa-desktop"></i>
+              <h3>Clean & Simple</h3>
+              <p>
+                A minimal and beautiful interface designed for a better
+                experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-sidebar">
+            <img src="earth.png" alt="earth" id="earth-image" />
+            <p>"A clearer sky for a brighter you."</p>
+
+            <div class="mission">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-goal"
+              >
+                <path d="M12 13V2l8 4-8 4" />
+                <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
+                <path d="M8.002 9.997a5 5 0 1 0 8.9 2.02" />
+              </svg>
+              <h3>Our Mission</h3>
+              <p>
+                To make weather information accessible,accurate,and easy to
+                understand for everyone,everywhere.We believe that better
+                information leads to better decisions - and a better tomorrow.
+              </p>
+            </div>
+
+            <div class="passion">
+              <i class="fa-solid fa-heart"></i>
+              <h3>Built with Passion</h3>
+              <p>
+                SkyCast is created with a love for technology and nature,aiming
+                to combine data,design,and usability to deliver a seamless
+                weather experience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>SkyCast &copy Copyright 2026 ltd.</p>
+      <p>Stay Prepared. Stay Ahead.</p>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
