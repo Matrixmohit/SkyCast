@@ -10,7 +10,7 @@ const aboutPage = document.querySelector("#about-page");
 navHome.addEventListener("click", function (event) {
   event.preventDefault();
 
-  homePage.style.display = "grid";
+  homePage.style.display = "";
   aboutPage.style.display = "none";
 
   navHome.classList.add("active");
