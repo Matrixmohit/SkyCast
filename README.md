@@ -71,6 +71,17 @@ SkyCast provides real-time weather information for cities around the world, incl
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard
+![SkyCast Dashboard](Screenshots/dashboard.jpeg)
+
+### Light Mode
+![SkyCast Light Mode](Screenshots/light-mode.jpeg)
+
+### About
+![SkyCast About](Screenshots/about.jpeg)
+
 ## 📌 Main Functionality
 
 ### Weather Search
