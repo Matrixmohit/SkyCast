@@ -175,6 +175,12 @@ SkyCast/
 ├── index.html
 ├── styles.css
 ├── script.js
+├── README.md
+│
+├── Screenshots/
+│   ├── dashboard.jpeg
+│   ├── light-mode.jpeg
+│   └── about.jpeg
 │
 ├── Weather-image/
 │   ├── clear.png
@@ -199,7 +205,6 @@ SkyCast/
 ├── logo.png
 ├── sunrise.png
 └── sunset.png
-
 ```
 ## Author
 
