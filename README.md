@@ -8,7 +8,7 @@ SkyCast provides real-time weather information for cities around the world, incl
 
 ## 🌐 Live Demo
 
-🔗 **[View SkyCast Live](https://matrixmohit.github.io/SkyCast/)**
+🔗 **[View SkyCast Live](https://your-skycast.netlify.app)**
 
 > Explore real-time weather, hourly forecasts, daily forecasts, AQI,
 > location detection, interactive maps, and dark/light mode.
